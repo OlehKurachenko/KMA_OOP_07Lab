@@ -80,5 +80,20 @@ int main() {
 	assert(!(s_c_string > s_copy));
 	assert(!(s_c_string >= s_copy));
 
+	s_copy = String(s_c_string, 2);
+	s_c_string += s_c_string;
+
+	assert(s_copy == s_c_string);
+
+	char b3_c[] = "global_core";
+	std::string b3(b3_c);
+
+	s_copy += b3_c;
+	s_c_string += b3;
+
+	assert(s_copy == s_c_string);
+
+	assert(String("Oleh") + ' ' + "Kurachenko" == std::string("Oleh Kurachenko"));
+
 	return 0;
 }
